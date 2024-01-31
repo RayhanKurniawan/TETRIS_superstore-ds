@@ -34,7 +34,7 @@ data = pd.pivot_table(
 ).reset_index()
 
 data['profit_pct'] = 100.0 * data['profit'] / data['sales']
-st.dataframe(data)
+# st.dataframe(data)
 
 #helper function
 def format_big_number(num):
@@ -100,7 +100,7 @@ bar_chart = alt.Chart(df[df['order_year']==CURR_YEAR]).mark_bar().encode(
     y='sum(sales):Q',
     color='segment:N',
     x='segment:N'
-).properties(width=150, height=80)
+).properties(width=350, height=220)
 
 st.altair_chart(bar_chart)
 
